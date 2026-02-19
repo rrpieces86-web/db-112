@@ -1,0 +1,25 @@
+---------------------class #3 models-------------
+models = data (layer) = DB = SQL (not in this case)
+
+in order to ceate a model we need to create a class inside of models.py
+class needs to inherit from models.Model in order to work
+each class that we create needs attributes (these ones are going to be the coulums on our table)
+each attribute needs to belong to a data type (CharField, TextField, etc...)
+each class can have a diffent fuction (like dunderr method str)
+
+
+sub-commands related to models
+1. makemigrations- help us to generate the migration files from a models.py
+2. migrate- help us to apply  changes to a database from a migration file
+
+---------migration file---------
+a python file that contains the tasks to perform into the db
+
+--------superuser--------
+in order to enter to the django admin  site we need to creat a super user
+execute - python manage.py createsuperuser
+
+in order to display the model in the admin site we need to register the model inside of admin.py
+Add to that file: 
+1. The import of the model (from .models import Post)
+2. The command: admin.site.register(Post)
