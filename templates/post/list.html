@@ -6,13 +6,17 @@
 
 {% block content %}
     <h1>posts</h1>
-    <ul>
-        {% for item in posts %}
-            <li>
-                <h1>title: {{ item.title }}</h1>
-                <p>body: {{ item.body|truncatechars:5}}</p>
-                <a href="{% url 'post_detail' item.id %}">continue reading...</a>
-            </li>
-        {% endfor %}
-    </ul>
+        <ul>
+            {% for item in posts %}
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <li>
+                            <h1 class="card-title">title: {{ item.title }}</h1>
+                            <p class="card-text">body: {{ item.body|truncatechars:5}}</p>
+                            <a href="{% url 'post_detail' item.id %}" class="card-link">continue reading...</a>
+                        </li>
+                    </div>
+                </div>
+            {% endfor %}
+        </ul>
     {% endblock %}
